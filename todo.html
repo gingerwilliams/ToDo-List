@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      *{box-sizing: border-box;}
+      body {
+        background:#e1e1e1;
+        font-family: Arial, Helvetica, san-serif;
+      }
+      div {
+        width:400px;
+        border:1px solid #d0d0d0;
+        margin:0 auto;
+        background:#fafafa; 
+        padding:20px;
+      }
+
+      header {
+        text-align: center;
+      }
+
+      #input-todo {
+        width: 100%; 
+        padding: 15px 10px;
+      }
+
+      #submit {
+        font-size: 1em;
+        text-align: center;
+        color:#ffffff;
+        width:100%;
+        padding:15px 0;
+        margin:2px 0 0 0;
+        background: #0E7AA9;
+        border:1px solid #0D6A93;
+      }
+
+      ul {
+        padding:0;
+      }
+
+      li {
+        list-style: none;
+        display:block; 
+        border-bottom:1px solid #d0d0d0; 
+        padding: 10px 5px;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div>
+      <header>
+        <h1>Get It Done</h1>
+        <input id="input-todo" type="text" placeholder="What do you have to do today?">
+        <input id="submit" type="submit" value="Add ToDo" onClick="addtodo();">
+        <!-- <input id="clear" type="button" value="Remove This One" onClick="cleartodo();"> -->
+      </header>
+      
+      <ul id="todo-list">
+        <!-- <li>
+          <input class="todo" type="checkbox">
+          <label>Something I have to do</label>
+        </li>
+
+        <li>
+          <input class="todo" type="checkbox">
+          <label>Something I have to do</label>
+        </li>
+
+        <li id="listitem">
+          <input class="todo" type="checkbox">
+          <label>Something I have to do</label>
+        </li> -->
+
+      </ul>
+
+    </div>
+    <script>
+
+    
+    var addtodo;
+    var cleartodo;
+
+    addtodo = function(){
+      var inputitem = document.getElementById('input-todo').value;
+
+      var listitem = document.createElement('li');
+      
+      var todotext = document.createTextNode(inputitem);
+      listitem.appendChild(todotext);
+
+      document.getElementById('todo-list').appendChild(listitem);
+    }
+
+
+      
+
+    </script>
+  </body>
+
+</html>
